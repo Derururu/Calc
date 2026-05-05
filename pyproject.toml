@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latex-aware-calc"
+version = "0.1.0"
+description = "A LaTeX-aware terminal calculator with autosuggestions."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "antlr4-python3-runtime==4.11.1",
+    "prompt_toolkit>=3.0.20",
+    "rich>=13.0",
+    "sympy>=1.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+calc = "latexcalc.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
